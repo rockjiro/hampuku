@@ -1,0 +1,30 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "materialize/components/color-variables";
+$primary-color: color("blue", "lighten-2") !default;
+$secondary-color: color("light-blue", "darken-4") !default;
+@import 'materialize';
+
+.main-visual {
+    height: 100vh;
+    display: table;
+    width: 100%;
+}
+
+.main-item {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.login-form {
+    width: 45%;
+    margin: 0 auto;
+}
+
+@media #{$small-and-down} {
+    .login-form {
+        width: 90%;
+    }
+}
