@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   root to: 'test#home'
-
   get 'test/show'
-
-  devise_for :users
+  devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
   get 'home/top'
 
   # The priority is based upon order of creation: first created -> highest priority.
