@@ -15,7 +15,7 @@
  */
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "materialize/components/color-variables";
-$primary-color: color("blue-grey", "lighten-5") !default;
+$primary-color: color("blue", "lighten-2") !default;
 $secondary-color: color("light-blue", "darken-4") !default;
 @import 'materialize';
 
@@ -84,4 +84,12 @@ nav .brand-logo {
     .login-container {
         width: 80%;
     }   
+}
+
+.menu-btn {
+    color: color("light-blue", "darken-4");
+    font-size: 3rem;
+    padding: 15px;
+    position: fixed;
+    right: 0;
 }
