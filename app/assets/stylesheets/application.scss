@@ -36,6 +36,18 @@ input[type="submit" i] {
     margin: 2rem 0;
 }
 
+#error_explanation h2 {
+    font-size: 1rem;
+}
+
+#error_explanation {
+    color: color("red", "accent-4");
+}
+
+.alert {
+    color: color("red", "accent-4");
+}
+
 @media #{$medium-and-down} {
     .login-container {
         width: 50%;

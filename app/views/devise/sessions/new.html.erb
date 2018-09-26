@@ -2,17 +2,14 @@
   <div class="main-item">
     <h2 class="header-text">ログイン</h2>
     <div class="login-container container">
+    <%= render "shared/alert" %>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="input-field">
-        <i class="material-icons prefix">email</i>
-        <%= f.email_field :email, class: "validate",  autofocus: true, autocomplete: "email" %>
-        <%= f.label "メールアドレス" %><br />
+        <%= f.email_field :email, class: "validate",  autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
       </div>
     
       <div class="input-field">
-        <i class="material-icons prefix">vpn_key</i>
-        <%= f.password_field :password, class: "validate", autocomplete: "current-password" %>
-        <%= f.label "パスワード" %><br />
+        <%= f.password_field :password, class: "validate", autocomplete: "current-password", placeholder: "パスワード" %>
       </div>
 
       <div class="actions">
