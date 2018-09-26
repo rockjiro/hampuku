@@ -15,7 +15,7 @@
  */
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "materialize/components/color-variables";
-$primary-color: color("blue", "lighten-2") !default;
+$primary-color: color("blue-grey", "lighten-5") !default;
 $secondary-color: color("light-blue", "darken-4") !default;
 @import 'materialize';
 
@@ -26,6 +26,22 @@ input[type="submit" i] {
 .header-text {
     font-size: 2rem;
     margin: 3rem 0;
+}
+
+.main-item-wrapper {
+    height: 100vh;
+    display: table;
+    width: 100%;
+}
+
+.main-item {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.lead-text {
+    margin: 3em 0;
 }
 
 .login-container {
@@ -46,6 +62,16 @@ input[type="submit" i] {
 
 .alert {
     color: color("red", "accent-4");
+}
+
+.fix-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav .brand-logo {
+    padding: 0 0 0 15px;
 }
 
 @media #{$medium-and-down} {
