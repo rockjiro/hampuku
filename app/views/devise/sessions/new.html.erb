@@ -1,16 +1,18 @@
 <section class="main-item-wrapper blue-text text-darken-4">
   <div class="main-item">
-    <h2>ログイン</h2>
-    <div class="container">
+    <h2 class="header-text">ログイン</h2>
+    <div class="login-container container">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="input-field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <i class="material-icons prefix">email</i>
+        <%= f.email_field :email, class: "validate",  autofocus: true, autocomplete: "email" %>
+        <%= f.label "メールアドレス" %><br />
       </div>
     
       <div class="input-field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
+        <i class="material-icons prefix">vpn_key</i>
+        <%= f.password_field :password, class: "validate", autocomplete: "current-password" %>
+        <%= f.label "パスワード" %><br />
       </div>
 
       <div class="actions">

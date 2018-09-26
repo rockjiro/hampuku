@@ -18,3 +18,32 @@
 $primary-color: color("blue", "lighten-2") !default;
 $secondary-color: color("light-blue", "darken-4") !default;
 @import 'materialize';
+
+input[type="submit" i] {
+    color: inherit;
+}
+
+.header-text {
+    font-size: 2rem;
+    margin: 3rem 0;
+}
+
+.login-container {
+    width: 30%;
+}
+
+.actions {
+    margin: 2rem 0;
+}
+
+@media #{$medium-and-down} {
+    .login-container {
+        width: 50%;
+    }   
+}
+
+@media #{$small-and-down} {
+    .login-container {
+        width: 80%;
+    }   
+}
