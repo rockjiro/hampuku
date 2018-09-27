@@ -4,7 +4,7 @@
     <div class="login-container container">
     <%= render "shared/alert" %>
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-    <%= devise_error_messages! %>
+    <%= devise_error_messages %>
       <div class="input-field">
         <%= f.email_field :email,
                           autofocus: true,
