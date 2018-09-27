@@ -1,7 +1,11 @@
 <ul id="slide-out" class="sidenav center-align">
     <div class="light-blue darken-4">
-        <li><a class="waves-effect white-text" href="#!">ログイン</a></li>
-        <li><a class="waves-effect white-text" href="#!">登録</a></a></li>
+        <% if user_signed_in? %>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "waves-effect white-text" %></li>
+        <% else %>
+        <li><%= link_to "ログイン", user_session_path, class: "waves-effect white-text" %></li>
+        <li><%= link_to "登録", new_user_registration_path, class: "waves-effect white-text" %></li>
+        <% end %>
     </div>
     <li><a class="waves-effect" href="#!">Hampukuとは?</a></li>
     <li><a class="waves-effect" href="#!">Hampukuの使い方</a></li>
