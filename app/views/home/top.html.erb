@@ -4,14 +4,11 @@
       <h1>Hampuku</h1>
       <p>問題をつくってシェアする</p>
     </div>
-    <div class="login-form">
-      <form>
-        <div>
-          <div class="input-field">
-            <%= link_to "はじめる", book_index_path, class: "waves-effect waves-light btn-large" %>
-          </div>
-        </div>
-      </form>
+    <div>
+      <%= render "shared/alert" %>
+      <div class="input-field">
+        <%= link_to "はじめる", book_index_path, class: "waves-effect waves-light btn-large" %>
+      </div>
     </div>
   </div>
 </section>

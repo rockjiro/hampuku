@@ -64,6 +64,10 @@ input[type="submit" i] {
     color: color("red", "accent-4");
 }
 
+.notice {
+    color: color("teal", "darken-3");
+}
+
 .fix-header {
     position: fixed;
     top: 0;
