@@ -1,14 +1,14 @@
 <ul id="slide-out" class="sidenav center-align">
-    <div class="light-blue darken-4">
-        <% if user_signed_in? %>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "waves-effect white-text" %></li>
-        <% else %>
-        <li><%= link_to "ログイン", user_session_path, class: "waves-effect white-text" %></li>
-        <li><%= link_to "登録", new_user_registration_path, class: "waves-effect white-text" %></li>
-        <% end %>
-    </div>
+    <li class="menu-head bg-blue-shape"><%= link_to "Hampuku", root_path %></li>
+    <% if user_signed_in? %>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "waves-effect waves-light btn-small grey" %></li>
+    <% else %>
+        <li><%= link_to "ログイン", user_session_path, class: "waves-effect waves-light btn-small amber accent-4" %></li>
+        <li><%= link_to "登録", new_user_registration_path, class: "waves-effect waves-light btn-small green" %></li>
+    <% end %>
+    <li><%= link_to "ブックを探す", book_index_path %></li>
     <li><a class="waves-effect" href="#!">Hampukuとは?</a></li>
     <li><a class="waves-effect" href="#!">Hampukuの使い方</a></li>
     <li><a class="waves-effect" href="#!">お問い合わせ</a></li>
 </ul>
-<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons menu-btn">dehaze</i></a>
+<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons menu-btn grey darken-1 z-depth-2 white-text">dehaze</i></a>

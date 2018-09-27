@@ -23,6 +23,10 @@ input[type="submit" i] {
     color: inherit;
 }
 
+.bg-blue-shape {
+    background: linear-gradient(170deg,#01579b 5%, #fff 10%,#fff 85% ,#01579B 90%, #01579b 100%);
+}
+
 .header-text {
     font-size: 2rem;
     margin: 3rem 0;
@@ -68,16 +72,6 @@ input[type="submit" i] {
     color: color("teal", "darken-3");
 }
 
-.fix-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-nav .brand-logo {
-    padding: 0 0 0 15px;
-}
-
 @media #{$medium-and-down} {
     .login-container {
         width: 50%;
@@ -93,7 +87,29 @@ nav .brand-logo {
 .menu-btn {
     color: color("light-blue", "darken-4");
     font-size: 3rem;
-    padding: 15px;
+    padding: 5px;
     position: fixed;
-    right: 0;
+    top: 20px;
+    left: 30px;
+    border-radius: 30px;
+}
+
+@media #{$medium-and-down} {
+    .menu-btn {
+        font-size: 2rem;
+        top: auto;
+        left: 0;
+        bottom: 50px;
+        border-radius: 0;
+    }    
+}
+
+.menu-head {
+    padding: 15px;
+    margin: 0 0 30px 0;
+}
+
+li.menu-head > a {
+    font-size: 1.3rem;
+    color: color("light-blue", "darken-4");
 }
