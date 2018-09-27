@@ -1,2 +1,23 @@
-<h1>Book#index</h1>
-<p>ブックを探してみよう</p>
+<section class="main-item-wrapper blue-text text-darken-4">
+    <div class="main-item">
+        <div class="leading">
+            <h1 class="header-text">ブック検索</h1>
+            <p class="grey-text text-accent-4">
+                勉強したいキーワードを入力してください。<br>
+                キーワードと名前が一致するブックを検索します。
+            </p>
+        </div>
+        <div class="container">
+            <form>
+              <div class="input-field search-input-field">
+                  <input type="text" name="bookname" autofocus="true"
+                  placeholder="例) 英検3級、ITパスポート、Ruby on Rails..."></input>
+              </div>
+        
+              <div class="actions">
+                <%= link_to "検索", book_index_path, class: "waves-effect waves-light btn-large" %>
+              </div>
+            </form>
+        </div>
+    </div>
+</section>
