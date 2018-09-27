@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+
+  get 'book/index'
+
+  get 'book/detail'
+
+  get 'book/edit'
+
   # root to: 'test#home'
   get 'test/show'
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
