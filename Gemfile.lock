@@ -100,7 +100,6 @@ GEM
       rack
     orm_adapter (0.5.0)
     pg (0.20.0)
-    puma (3.12.0)
     rack (1.6.10)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -187,7 +186,6 @@ DEPENDENCIES
   materialize-sass
   omniauth-twitter
   pg (= 0.20.0)
-  puma
   rails (= 4.2.8)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
