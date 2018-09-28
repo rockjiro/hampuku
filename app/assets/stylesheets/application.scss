@@ -117,3 +117,31 @@ li.menu-head > a {
     font-size: 1.3rem;
     color: color("light-blue", "darken-4");
 }
+
+.search-input-field {
+    margin: 0 auto;
+    width: 70%;
+}
+
+@media #{$small-and-down} {
+    .search-input-field {
+        width: 90%;
+    }
+}
+
+.overview-text{
+    width: 50%;
+    text-align: left;
+    margin: 0 auto;
+}
+
+@media #{$small-and-down} {
+    .overview-text{
+        width: 90%;
+    }
+}
+
+.leading-text{
+    line-height: 2rem;
+    letter-spacing: 1px;
+}
