@@ -98,7 +98,7 @@ input[type="submit" i] {
     border-radius: 30px;
 }
 
-@media #{$medium-and-down} {
+@media #{$small-and-down} {
     .menu-btn {
         font-size: 2rem;
         top: auto;
