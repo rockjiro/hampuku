@@ -7,7 +7,7 @@
             </p>
         </div>
         <div class="container">
-            <% if !@books %>
+            <% if @books.empty? %>
                 <p>ブックがありません。</p>
             <% else %>
                 <ul class="book-list">
