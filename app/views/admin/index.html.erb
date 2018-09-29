@@ -10,11 +10,21 @@
             <% if @books.empty? %>
                 <p>ブックがありません。</p>
             <% else %>
-                <ul class="book-list">
+                <div class="book-list">
                 <% @books.each do |book| %>
-                    <li class="book"><%= book.name %></li>
+                    <div class="book">
+                        <p class="book-name">Ruby on Rails初心者向け問題集</p>
+                        <p class="book-desrciption">
+                            勉強しはじめて1ヵ月以内に身につけておきたい知識を中心に構成しています。
+                        </p>
+                        <div class="book-footer">
+                            <p><i class="tiny material-icons">account_box</i><%= @user.username %></p>
+                            <p><i class="tiny material-icons">collections</i>5</p>
+                            <p><i class="tiny material-icons">access_time</i>2018.09.29</p>
+                        </div>
+                    </div>
                 <% end %>
-                </ul>
+                </div>
             <% end %>
         </div>
     </div>
