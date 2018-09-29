@@ -7,14 +7,14 @@
             </p>
         </div>
         <div class="container">
-            <% if @books.any? %>
-            <ul class="book-list">
-            <% @books.each do |book| %>
-                <li class="book"><%= book.name %></li>
-            <% end %>
-            </ul>
+            <% if !@books %>
+                <p>ブックがありません。</p>
             <% else %>
-            <p>ブックがありません。</p>
+                <ul class="book-list">
+                <% @books.each do |book| %>
+                    <li class="book"><%= book.name %></li>
+                <% end %>
+                </ul>
             <% end %>
         </div>
     </div>
