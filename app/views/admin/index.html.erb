@@ -1,2 +1,17 @@
-<%= @user.respond_to?(:books) %>
-<p>Find me in app/views/admin/index.html.erb</p>
+<section class="main-item-wrapper blue-text text-darken-4">
+    <div class="main-item">
+        <div class="leading">
+            <h1 class="header-text">マイページ</h1>
+            <p class="grey-text text-accent-4">
+                こんにちは。<%= @user.username %>さん
+            </p>
+        </div>
+        <div class="container">
+            <ul class="slider">
+            <% @books.each do |book| %>
+                <li><%= book.name %></li>
+            <% end %>
+            </ul>
+        </div>
+    </div>
+</section>

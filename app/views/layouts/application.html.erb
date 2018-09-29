@@ -2,20 +2,18 @@
 <html>
 <head>
   <title>Workspace</title>
+  <%= stylesheet_link_tag    '//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.css' %>
+  <%= stylesheet_link_tag    '//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick-theme.css' %>
   <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/icon?family=Material+Icons', :media => "all" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => "reload" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => "reload" %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <%= csrf_meta_tags %>
-  <script>
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-  </script>
 </head>
 <body id="fullpage">
 <%= render "shared/nav" %>
 <%= yield %>
+
 
 </body>
 </html>
