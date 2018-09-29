@@ -7,11 +7,15 @@
             </p>
         </div>
         <div class="container">
-            <ul class="slider">
+            <% if @books.any? %>
+            <ul class="book-list">
             <% @books.each do |book| %>
-                <li><%= book.name %></li>
+                <li class="book"><%= book.name %></li>
             <% end %>
             </ul>
+            <% else %>
+            <p>ブックがありません。</p>
+            <% end %>
         </div>
     </div>
 </section>
