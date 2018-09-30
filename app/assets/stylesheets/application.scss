@@ -147,18 +147,19 @@ li.menu-head > a {
 }
 
 .book-list {
-    display: flex;
-    flex-wrap: wrap;
+    margin: -30px 0 0 0;
+}
+
+.carousel .carousel-item {
+    width: 250px;
+    height: 280px;
 }
 
 .book {
-  width: 300px;
-  height: 250px;
-  margin: 15px 10px 0;
   color: #3c3c3c;
+  background: #fff;
   box-shadow: 0px 2px 5px 2px #00000057;
   border-radius: 2px;
-  position: relative;
 }
 
 .book-name {
@@ -174,11 +175,9 @@ li.menu-head > a {
 }
 
 .book-footer {
-    position: absolute;
     width: 100%;
     bottom: 0;
     text-align: left;
-    // color: #5f5f5f;
     padding: 15px;
 }
 

@@ -10,9 +10,9 @@
             <% if @books.empty? %>
                 <p>ブックがありません。</p>
             <% else %>
-                <div class="book-list">
+                <div class="book-list carousel light-blue darken-4">
                 <% @books.each do |book| %>
-                    <div class="book">
+                    <div class="book carousel-item">
                         <p class="book-name"><%= book.name %></p>
                         <p class="book-desrciption">
                             勉強しはじめて1ヵ月以内に身につけておきたい知識を中心に構成しています。
@@ -30,7 +30,7 @@
             
             <%= form_for([@user,@user.books.build]) do |f| %>
                 <p><%= f.text_field :name %></p>
-                <p><%= f.submit %></p>
+                <p><%= f.submit "ブックを作る", class: "waves-effect waves-light btn-large" %></p>
             <% end %>
         </div>
     </div>

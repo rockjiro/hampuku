@@ -3,7 +3,6 @@ class BooksController < ApplicationController
         @user = User.find(params[:user_id])
         @user.books.create(books_params)
         redirect_to admin_index_path
-        # redirect_to root_path
     end
     
     private

@@ -1,6 +1,7 @@
 <ul id="slide-out" class="sidenav center-align">
     <li class="menu-head bg-blue-shape"><%= link_to "Hampuku", root_path %></li>
     <% if user_signed_in? %>
+        <li><%= link_to "マイページ", admin_index_path, class: "waves-effect waves-light btn-small amber accent-4" %></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "waves-effect waves-light btn-small grey" %></li>
     <% else %>
         <li><%= link_to "ログイン", user_session_path, class: "waves-effect waves-light btn-small amber accent-4" %></li>
