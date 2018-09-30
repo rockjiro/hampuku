@@ -151,7 +151,7 @@ li.menu-head > a {
 }
 
 .carousel .carousel-item {
-    width: 250px;
+    width: 300px;
     height: 280px;
 }
 
@@ -166,7 +166,7 @@ li.menu-head > a {
 .book-name {
   font-size: 1.2rem;
   margin: 0;
-  padding: 20px 0;
+  padding: 20px 5px;
 }
 
 .book-desrciption {
@@ -189,4 +189,10 @@ li.menu-head > a {
 .input-container {
     width: 60%;
     margin: 0 auto;
+}
+
+@media #{$small-and-down} {
+    .input-container {
+        width: 90%;
+    }
 }
