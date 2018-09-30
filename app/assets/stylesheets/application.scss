@@ -152,34 +152,25 @@ li.menu-head > a {
 }
 
 .book {
-    width: 300px;
-    height: 380px;
-    margin: 15px 10px 0;
-    color: #fff;
-    // background-image: image-url("aircraft.png");
-    // background-size: cover;
-    // background: linear-gradient(90deg, #f1f1f1, #f9f9f9);
-    background: linear-gradient(#00579c 35%, #d6d6d6 80%);
-    box-shadow: 0px 3px 2px 0px #00000057;
-    border-radius: 2px;
-    position: relative;
+  width: 300px;
+  height: 250px;
+  margin: 15px 10px 0;
+  color: #3c3c3c;
+  box-shadow: 0px 2px 5px 2px #00000057;
+  border-radius: 2px;
+  position: relative;
 }
 
 .book-name {
-    font-size: 1.2rem;
-    margin: 0;
-    padding: 80px 0;
-    // background: #40a4d2;
-    // color: #fff;
-    // background-image: image-url("aircraft.png");
-    // background-size: cover;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 20px 0;
 }
 
 .book-desrciption {
-    font-size: .9rem;
-    // color: #5f5f5f;
-    text-align: left;
-    padding: 15px;
+  font-size: .9rem;
+  text-align: left;
+  padding: 0 15px;
 }
 
 .book-footer {

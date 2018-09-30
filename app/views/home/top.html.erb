@@ -7,7 +7,7 @@
     <div>
       <%= render "shared/alert" %>
       <div class="input-field">
-        <%= link_to "はじめる", book_index_path, class: "waves-effect waves-light btn-large" %>
+        <%= link_to "ブックを探す", book_index_path, class: "waves-effect waves-light btn-large" %>
         <p>or</p>
         <% if user_signed_in? %>
           <p><%= link_to "マイページ", admin_index_path, class: "blue-grey-text" %></p>

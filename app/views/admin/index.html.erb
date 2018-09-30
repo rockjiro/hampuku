@@ -13,7 +13,7 @@
                 <div class="book-list">
                 <% @books.each do |book| %>
                     <div class="book">
-                        <p class="book-name">Ruby on Rails初心者向け問題集</p>
+                        <p class="book-name"><%= book.name %></p>
                         <p class="book-desrciption">
                             勉強しはじめて1ヵ月以内に身につけておきたい知識を中心に構成しています。
                         </p>
@@ -25,6 +25,12 @@
                     </div>
                 <% end %>
                 </div>
+            <% end %>
+            
+            
+            <%= form_for([@user,@user.books.build]) do |f| %>
+                <p><%= f.text_field :name %></p>
+                <p><%= f.submit %></p>
             <% end %>
         </div>
     </div>
