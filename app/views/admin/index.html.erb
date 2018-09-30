@@ -15,7 +15,7 @@
                     <div class="book carousel-item">
                         <p class="book-name"><%= book.name %></p>
                         <p class="book-desrciption">
-                            勉強しはじめて1ヵ月以内に身につけておきたい知識を中心に構成しています。
+                            <%= book.description %>
                         </p>
                         <div class="book-footer">
                             <p><i class="tiny material-icons">account_box</i><%= @user.username %></p>
@@ -27,11 +27,13 @@
                 </div>
             <% end %>
             
-            
+            <div class="input-container">
             <%= form_for([@user,@user.books.build]) do |f| %>
-                <p><%= f.text_field :name %></p>
+                <p><%= f.text_field :name, placeholder: "ブックの名前" %></p>
+                <p><%= f.text_field :description, placeholder: "ブックの説明文" %></p>
                 <p><%= f.submit "ブックを作る", class: "waves-effect waves-light btn-large" %></p>
             <% end %>
+            </div>
         </div>
     </div>
 </section>
