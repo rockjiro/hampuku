@@ -196,3 +196,58 @@ li.menu-head > a {
         width: 90%;
     }
 }
+
+.modal-mask {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: table;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: #00000096;
+    transition: opacity .5s ease;
+}
+
+.modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.modal-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 90px 50px;
+  background: #fff;
+  box-shadow: 0 2px 10px 10px rgba(0, 0, 0, 0.33);
+  transition: all .5s ease;
+  position: relative;
+}
+
+@media #{$small-and-down} {
+    .modal-container {
+        width: 90%;
+        padding: 90px 20px;
+    }
+}
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.close-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}

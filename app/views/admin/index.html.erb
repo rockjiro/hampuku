@@ -26,14 +26,26 @@
                 <% end %>
                 </div>
             <% end %>
-            
-            <div class="input-container">
-            <%= form_for([@user,@user.books.build]) do |f| %>
-                <p><%= f.text_field :name, placeholder: "ブックの名前" %></p>
-                <p><%= f.text_field :description, placeholder: "ブックの説明文" %></p>
-                <p><%= f.submit "追加", class: "waves-effect waves-light btn-large" %></p>
-            <% end %>
+            <div id="js-book-create">
+                <transition name="modal">
+                    <div class="modal-mask" v-show="isActive">
+                        <div class="modal-wrapper">
+                            <div class="modal-container">
+                                <i class="material-icons small grey-text close-btn" @click="doActive">close</i>
+                                <%= form_for([@user,@user.books.build]) do |f| %>
+                                    <p><%= f.text_field :name, placeholder: "ブックの名前" %></p>
+                                    <p><%= f.text_field :description, placeholder: "ブックの説明文" %></p>
+                                    <p><%= f.submit "追加", class: "waves-effect waves-light btn-large" %></p>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </transition>
+                <p class="btn-floating btn-large waves-effect waves-light" v-on:click="doActive">
+                    <i class="material-icons">add</i>
+                </p>
             </div>
+            <%= javascript_pack_tag 'book_create' %>
         </div>
     </div>
 </section>
