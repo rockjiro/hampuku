@@ -1,12 +1,3 @@
-GIT
-  remote: git://github.com/rails/webpacker.git
-  revision: 895d2cfc15eda2edae9e667c642a02523d958f53
-  specs:
-    webpacker (4.0.0.pre.pre.2)
-      activesupport (>= 4.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 4.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -184,6 +175,10 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    webpacker (3.5.5)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
 
 PLATFORMS
   ruby
@@ -204,7 +199,7 @@ DEPENDENCIES
   sqlite3
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-  webpacker!
+  webpacker
 
 BUNDLED WITH
    1.16.5
