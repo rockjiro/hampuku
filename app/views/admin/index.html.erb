@@ -10,7 +10,7 @@
             <% if @books.empty? %>
                 <p>ブックがありません。</p>
             <% else %>
-                <div class="book-list carousel light-blue darken-4">
+                <div class="book-list carousel">
                 <% @books.each do |book| %>
                     <div class="book carousel-item">
                         <p class="book-name"><%= book.name %></p>
@@ -32,9 +32,10 @@
                         <div class="modal-wrapper">
                             <div class="modal-container">
                                 <i class="material-icons small grey-text close-btn" @click="doActive">close</i>
+                                <h2 class="header-text">ブック登録</h2>
                                 <%= form_for([@user,@user.books.build]) do |f| %>
-                                    <p><%= f.text_field :name, placeholder: "ブックの名前" %></p>
-                                    <p><%= f.text_field :description, placeholder: "ブックの説明文" %></p>
+                                    <p><%= f.text_field :name, placeholder: "名前" %></p>
+                                    <p><%= f.text_field :description, placeholder: "説明文" %></p>
                                     <p><%= f.submit "追加", class: "waves-effect waves-light btn-large" %></p>
                                 <% end %>
                             </div>
