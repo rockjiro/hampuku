@@ -31,7 +31,7 @@
             <%= form_for([@user,@user.books.build]) do |f| %>
                 <p><%= f.text_field :name, placeholder: "ブックの名前" %></p>
                 <p><%= f.text_field :description, placeholder: "ブックの説明文" %></p>
-                <p><%= f.submit "ブックを作る", class: "waves-effect waves-light btn-large" %></p>
+                <p><%= f.submit "追加", class: "waves-effect waves-light btn-large" %></p>
             <% end %>
             </div>
         </div>
