@@ -16,6 +16,8 @@ gem 'materialize-sass'
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'webpacker', '~> 3.5'
+gem 'rambulance'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
