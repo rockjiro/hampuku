@@ -1,7 +1,6 @@
 class ExceptionsApp < Rambulance::ExceptionsApp
   def bad_request
   end
-  helper Webpacker::Helper
 
   def forbidden
   end
