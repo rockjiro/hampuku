@@ -18,12 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(app)
 })
 
-// let app = new Vue({
-//   el: "#hello",
-//   data: {
-//     message: 'Hello,Vue.js'
-//   }
-// })
 
 // The above code uses Vue without the compiler, which means you cannot
 // use Vue to target elements in your existing html templates. You would

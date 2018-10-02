@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <p>{{ message }}</p>
-    <input type="text" name="test" v-model="message" />
   </div>
 </template>
 
@@ -9,7 +8,7 @@
 export default {
   data: function () {
     return {
-      message: "Hello vue.js"
+      message: "Hello Vue!"
     }
   }
 }
