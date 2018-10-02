@@ -15,7 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'materialize-sass'
 gem 'devise'
 gem 'omniauth-twitter'
-gem 'webpacker', '~> 3.5'
+# gem 'webpacker', '~> 3.5'
 gem 'rambulance'
 
 # Use jquery as the JavaScript library
