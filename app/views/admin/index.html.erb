@@ -12,6 +12,7 @@
             <% else %>
                 <div class="book-list carousel">
                 <% @books.each do |book| %>
+                    <%= link_to edit_user_book_path(@user, book) do %>
                     <div class="book carousel-item">
                         <p class="book-name"><%= book.name %></p>
                         <p class="book-desrciption">
@@ -24,6 +25,7 @@
                             <p><i class="tiny material-icons">account_box</i><%= book.author %></p>
                         </div>
                     </div>
+                    <% end %>
                 <% end %>
                 </div>
             <% end %>
