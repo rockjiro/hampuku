@@ -46,7 +46,14 @@
                     <i class="material-icons">add</i>
                 </p>
             </div>
-            <%= javascript_pack_tag 'book_create' %>
+            <script>
+                var test = new Vue({
+                    el: '#js-book-create',
+                    data: {
+                        message: 'hello'
+                    }
+                })
+            </script>
         </div>
     </div>
 </section>
