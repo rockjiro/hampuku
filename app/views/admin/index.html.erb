@@ -18,9 +18,10 @@
                             <%= book.description %>
                         </p>
                         <div class="book-footer">
-                            <p><i class="tiny material-icons">account_box</i><%= @user.username %></p>
                             <p><i class="tiny material-icons">collections</i>5</p>
-                            <p><i class="tiny material-icons">access_time</i>2018.09.29</p>
+                            <p><i class="tiny material-icons">star_border</i><%= book.star %></p>
+                            <p><i class="tiny material-icons">access_time</i><%= book.created_at.strftime('%Y.%m.%d') %></p>
+                            <p><i class="tiny material-icons">account_box</i><%= book.author %></p>
                         </div>
                     </div>
                 <% end %>
@@ -34,6 +35,7 @@
                                 <i class="material-icons small grey-text close-btn" @click="doActive">close</i>
                                 <h2 class="header-text">ブック登録</h2>
                                 <%= form_for([@user,@user.books.build]) do |f| %>
+                                    <%= f.hidden_field :author, :value => @user.username %>
                                     <p><%= f.text_field :name, placeholder: "名前" %></p>
                                     <p><%= f.text_field :description, placeholder: "説明文" %></p>
                                     <p><%= f.submit "追加", class: "waves-effect waves-light btn-large" %></p>
