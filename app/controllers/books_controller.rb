@@ -12,6 +12,11 @@ class BooksController < ApplicationController
         redirect_to admin_index_path        
     end
     
+    def show
+        @user = User.find(params[:user_id])
+        @book = Book.find(params[:id])        
+    end
+    
     def edit
         @user = User.find(params[:user_id])
         @book = Book.find(params[:id])

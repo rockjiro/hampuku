@@ -12,7 +12,7 @@
             <% else %>
                 <div class="book-list carousel">
                 <% @books.each do |book| %>
-                    <%= link_to edit_user_book_path(@user, book) do %>
+                    <%= link_to user_book_path(@user, book), method: :get do %>
                     <div class="book carousel-item">
                         <p class="book-name"><%= book.name %></p>
                         <p class="book-desrciption">
