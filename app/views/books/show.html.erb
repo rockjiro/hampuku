@@ -1,25 +1,16 @@
 <section class="main-item-wrapper blue-text text-darken-4">
     <div class="main-item">
         <div class="container">
-            <div class="collection with-header">
-                <div class="collection-header">
-                    <h4><%= @book.name %></h4>
+            <div class="book-detail row z-depth-5 teal darken-2">
+                <div class="col m8 white-text">
+                    <h4 class="book-title"><%= @book.name %></h4>
+                    <p><%= @book.description %></p>
                 </div>
-                <div class="collection-item">
-                    <p><i class="material-icons">chat_bubble_outline</i><%= @book.description %></p>
+                <div class="col m4 white grey-text text-darken-1">
+                    <p><%= @book.author %></p>
+                    <p><%= @book.created_at.strftime('%Y年%m月%d日 %H:%m') %></p>
+                    <p><%= @book.star %></p>
                 </div>
-                <p class="collection-item">
-                    <i class="material-icons">account_box</i>
-                    <%= @book.author %>
-                </p>
-                <p class="collection-item">
-                    <i class="material-icons">access_time</i>
-                    <%= @book.created_at.strftime('%Y年%m月%d日 %H:%m') %>
-                </p>
-                <p class="collection-item">
-                    <i class="material-icons">star_border</i>
-                    <%= @book.star %>
-                </p>
             </div>
             <%= link_to '削除',user_book_path(@user,@book),method: :delete,class: "waves-effect waves-light btn-large red" %>
             <%= link_to '戻る',admin_index_path,class: "waves-effect waves-light btn-large grey" %>

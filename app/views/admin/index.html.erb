@@ -7,14 +7,18 @@
             </p>
         </div>
         <div class="container">
+            <p class="btn-floating btn-large waves-effect waves-light" v-on:click="doActive">
+                <i class="material-icons">add</i>
+            </p>
             <% if @books.empty? %>
                 <p>ブックがありません。</p>
             <% else %>
-                <div class="book-list carousel">
+                <div class="book-list">
                 <% @books.each do |book| %>
-                    <%= link_to user_book_path(@user, book), method: :get do %>
-                    <div class="book carousel-item">
+                    <div class="book">
+                        <%= link_to user_book_path(@user, book), method: :get do %>
                         <p class="book-name"><%= book.name %></p>
+                        <% end %>
                         <p class="book-desrciption">
                             <%= book.description %>
                         </p>
@@ -25,7 +29,6 @@
                             <p><i class="tiny material-icons">account_box</i><%= book.author %></p>
                         </div>
                     </div>
-                    <% end %>
                 <% end %>
                 </div>
             <% end %>
@@ -39,16 +42,13 @@
                                 <%= form_for([@user,@user.books.build]) do |f| %>
                                     <%= f.hidden_field :author, :value => @user.username %>
                                     <p><%= f.text_field :name, placeholder: "名前" %></p>
-                                    <p><%= f.text_field :description, placeholder: "説明文" %></p>
+                                    <p><%= f.text_area :description, placeholder: "説明文", class: "materialize-textarea" %></p>
                                     <p><%= f.submit "追加", class: "waves-effect waves-light btn-large" %></p>
                                 <% end %>
                             </div>
                         </div>
                     </div>
                 </transition>
-                <p class="btn-floating btn-large waves-effect waves-light" v-on:click="doActive">
-                    <i class="material-icons">add</i>
-                </p>
             </div>
             <%= javascript_include_tag 'frontend/book_create.js' %>
         </div>
