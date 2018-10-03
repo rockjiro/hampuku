@@ -2,18 +2,22 @@
     <div class="main-item">
         <div class="container">
             <div class="book-detail row z-depth-5 teal darken-2">
-                <div class="col m8 white-text">
-                    <h4 class="book-title"><%= @book.name %></h4>
-                    <p><%= @book.description %></p>
-                </div>
-                <div class="col m4 white grey-text text-darken-1">
+                <div class="col m4 white-text z-depth-2">
                     <p><%= @book.author %></p>
-                    <p><%= @book.created_at.strftime('%Y年%m月%d日 %H:%m') %></p>
                     <p><%= @book.star %></p>
+                    <p><i class="small material-icons">account_circle</i>大里 匠</p>
+                    <p><i class="medium material-icons">star</i>120</p>
+                </div>
+                <div class="col m8 white grey-text text-darken-1 z-depth-4">
+                    <h4 class="book-title"><%= @book.name %></h4>
+                    <%= simple_format(@book.description) %>
+                    <p><%= @book.created_at.strftime('%Y年%m月%d日 %H:%m') %></p>
+                    <div>
+                        <p><%= link_to '問題を解く',admin_index_path,class: "waves-effect waves-light btn-large grey" %></p>
+                    </div>
                 </div>
             </div>
-            <%= link_to '削除',user_book_path(@user,@book),method: :delete,class: "waves-effect waves-light btn-large red" %>
-            <%= link_to '戻る',admin_index_path,class: "waves-effect waves-light btn-large grey" %>
+            <p><%= link_to '戻る',admin_index_path,class: "grey-text text-darken-2" %></p>
         </div>
     </div>
 </section>

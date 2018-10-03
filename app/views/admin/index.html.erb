@@ -1,4 +1,4 @@
-<section class="main-item-wrapper blue-text text-darken-4">
+<section id="app" class="main-item-wrapper blue-text text-darken-4">
     <div class="main-item">
         <div class="leading">
             <h1 class="header-text">マイページ</h1>
@@ -10,47 +10,49 @@
             <p class="btn-floating btn-large waves-effect waves-light" v-on:click="doActive">
                 <i class="material-icons">add</i>
             </p>
-            <% if @books.empty? %>
-                <p>ブックがありません。</p>
-            <% else %>
-                <div class="book-list">
+        <% if @books.empty? %>
+            <p>ブックがありません。</p>
+        <% else %>
+            <div class="book-list z-depth-4">
                 <% @books.each do |book| %>
-                    <div class="book">
-                        <%= link_to user_book_path(@user, book), method: :get do %>
-                        <p class="book-name"><%= book.name %></p>
+                <ul class="book-row row grey-text text-darken-1 left-align">
+                    <li class="col m4 s12">
+                        <%= link_to(user_book_path(@user,book), method: :get, class: "grey-text text-darken-1") do %>
+                            <%= book.name %>
                         <% end %>
-                        <p class="book-desrciption">
-                            <%= book.description %>
-                        </p>
-                        <div class="book-footer">
-                            <p><i class="tiny material-icons">collections</i>5</p>
-                            <p><i class="tiny material-icons">star_border</i><%= book.star %></p>
-                            <p><i class="tiny material-icons">access_time</i><%= book.created_at.strftime('%Y.%m.%d') %></p>
-                            <p><i class="tiny material-icons">account_box</i><%= book.author %></p>
-                        </div>
-                    </div>
+                    </li>
+                    <li class="col m2 s12"><i class="tiny material-icons">account_circle</i>パパイヤ鈴木</li>
+                    <li class="col m2 s12"><i class="tiny material-icons">access_time</i><%= book.created_at.strftime('%Y.%m.%d') %></li>
+                    <li class="col m2 s12"><i class="tiny material-icons amber-text">star</i>125</li>
+                    <li class="col m1 s12"><i class="tiny material-icons green-text">edit</i></li>
+                    <li class="col m1 s12">
+                        <%= link_to user_book_path(@user,book),
+                            method: :delete,
+                            data: { confirm: "削除します。よろしいですか?" } do %>
+                        <i class="tiny material-icons red-text">delete</i>
+                        <% end %>
+                    </li>
+                </ul>
                 <% end %>
-                </div>
-            <% end %>
-            <div id="js-book-create">
-                <transition name="modal">
-                    <div class="modal-mask" v-show="isActive">
-                        <div class="modal-wrapper">
-                            <div class="modal-container">
-                                <i class="material-icons small grey-text close-btn" @click="doActive">close</i>
-                                <h2 class="header-text">ブック登録</h2>
-                                <%= form_for([@user,@user.books.build]) do |f| %>
-                                    <%= f.hidden_field :author, :value => @user.username %>
-                                    <p><%= f.text_field :name, placeholder: "名前" %></p>
-                                    <p><%= f.text_area :description, placeholder: "説明文", class: "materialize-textarea" %></p>
-                                    <p><%= f.submit "追加", class: "waves-effect waves-light btn-large" %></p>
-                                <% end %>
-                            </div>
+            </div>
+        <% end %>
+            <transition name="modal">
+                <div class="modal-mask" v-show="isActive">
+                    <div class="modal-wrapper">
+                        <div class="modal-container">
+                            <i class="material-icons small grey-text close-btn" @click="doActive">close</i>
+                            <h2 class="header-text">ブック登録</h2>
+                            <%= form_for([@user,@user.books.build]) do |f| %>
+                                <%= f.hidden_field :author, :value => @user.username %>
+                                <p><%= f.text_field :name, placeholder: "名前" %></p>
+                                <p><%= f.text_area :description, placeholder: "説明文", class: "materialize-textarea" %></p>
+                                <p><%= f.submit "追加", class: "waves-effect waves-light btn-large" %></p>
+                            <% end %>
                         </div>
                     </div>
-                </transition>
-            </div>
-            <%= javascript_include_tag 'frontend/book_create.js' %>
+                </div>
+            </transition>
         </div>
     </div>
 </section>
+<%= javascript_include_tag 'frontend/book_create.js' %>

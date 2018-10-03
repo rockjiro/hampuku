@@ -1,5 +1,5 @@
 var app = new Vue({
-    el: '#js-book-create',
+    el: '#app',
     data: {
         isActive: false
     },
