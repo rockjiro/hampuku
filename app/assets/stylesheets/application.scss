@@ -222,16 +222,44 @@ li.menu-head > a {
     min-height: 300px;
 }
 
-.book-title {
-    font-size: 1.5rem;
+@media #{$small-and-down} {
+    .book-title {
+        font-size: 1.3rem;
+    }
+    
+    .book-row {
+        text-align: left;
+    }
+    
+    .book-row-header {
+        display: none;
+    }
 }
 
 .book-list {
-    border: 1px solid #00000017;
+    border: 1px solid #0000003d;
+    margin-top: 30px;
 }
 
 .book-row {
-    padding: 30px 0;
-    border-bottom: 1px solid #00000017;
+    cursor: pointer;
+    padding: 15px 0;
+    border-bottom: 1px solid #0000003d;
     margin: 0;
+    transition: .3s ease-out;
+    text-align: center;
+}
+
+.book-row:hover {
+    background: color("grey", "lighten-4");
+}
+
+.book-row i.sp-show {
+    display: none;
+}
+
+@media #{$small-and-down} {
+    .book-row i.sp-show {
+        display: contents;
+    }
 }

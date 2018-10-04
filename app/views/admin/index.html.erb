@@ -7,31 +7,37 @@
             </p>
         </div>
         <div class="container">
-            <p class="btn-floating btn-large waves-effect waves-light" v-on:click="doActive">
+            <p class="btn-floating btn-large" v-on:click="doActive">
                 <i class="material-icons">add</i>
             </p>
         <% if @books.empty? %>
             <p>ブックがありません。</p>
         <% else %>
-            <div class="book-list z-depth-4">
+            <div class="book-list z-depth-2">
+                <ul class="book-row book-row-header row white-text light-blue darken-4 left-align">
+                    <li class="col m6 s12">
+                        タイトル
+                    </li>
+                    <li class="col m2 s12">
+                        作成者
+                    </li>
+                    <li class="col m2 s12">
+                        作成日
+                    </li>
+                    <li class="col m2 s12">
+                        お気に入り数
+                    </li>
+                </ul>
                 <% @books.each do |book| %>
-                <ul class="book-row row grey-text text-darken-1 left-align">
-                    <li class="col m4 s12">
-                        <%= link_to(user_book_path(@user,book), method: :get, class: "grey-text text-darken-1") do %>
+                <ul class="book-row row grey-text text-darken-2 left-align">
+                    <li class="col m6 s12 book-title">
+                        <%= link_to(user_book_path(@user,book), method: :get, class: "grey-text text-darken-2") do %>
                             <%= book.name %>
                         <% end %>
                     </li>
-                    <li class="col m2 s12"><i class="tiny material-icons">account_circle</i>パパイヤ鈴木</li>
-                    <li class="col m2 s12"><i class="tiny material-icons">access_time</i><%= book.created_at.strftime('%Y.%m.%d') %></li>
+                    <li class="col m2 s12"><i class="tiny material-icons sp-show">account_circle</i>Name</li>
+                    <li class="col m2 s12"><i class="tiny material-icons sp-show">access_time</i><%= book.created_at.strftime('%Y.%m.%d') %></li>
                     <li class="col m2 s12"><i class="tiny material-icons amber-text">star</i>125</li>
-                    <li class="col m1 s12"><i class="tiny material-icons green-text">edit</i></li>
-                    <li class="col m1 s12">
-                        <%= link_to user_book_path(@user,book),
-                            method: :delete,
-                            data: { confirm: "削除します。よろしいですか?" } do %>
-                        <i class="tiny material-icons red-text">delete</i>
-                        <% end %>
-                    </li>
                 </ul>
                 <% end %>
             </div>
@@ -46,7 +52,7 @@
                                 <%= f.hidden_field :author, :value => @user.username %>
                                 <p><%= f.text_field :name, placeholder: "名前" %></p>
                                 <p><%= f.text_area :description, placeholder: "説明文", class: "materialize-textarea" %></p>
-                                <p><%= f.submit "追加", class: "waves-effect waves-light btn-large" %></p>
+                                <p><%= f.submit "追加", class: "white-text btn-large" %></p>
                             <% end %>
                         </div>
                     </div>
