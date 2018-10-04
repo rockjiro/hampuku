@@ -46,6 +46,7 @@ input[type="submit" i] {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    animation: fadeIn 1.3s ease;
 }
 
 .lead-text {
@@ -213,31 +214,7 @@ li.menu-head > a {
     cursor: pointer;
 }
 
-.book-detail {
-    min-height: 300px;
-    margin: 50px 0;
-}
-
-.book-detail .col {
-    min-height: 300px;
-}
-
-@media #{$small-and-down} {
-    .book-title {
-        font-size: 1.3rem;
-    }
-    
-    .book-row {
-        text-align: left;
-    }
-    
-    .book-row-header {
-        display: none;
-    }
-}
-
 .book-list {
-    border: 1px solid #0000003d;
     margin-top: 30px;
 }
 
@@ -251,7 +228,22 @@ li.menu-head > a {
 }
 
 .book-row:hover {
-    background: color("grey", "lighten-4");
+    background: color("grey", "lighten-3");
+}
+
+@media #{$small-and-down} {
+    .book-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .book-row {
+        text-align: left;
+    }
+    
+    .book-row-header {
+        display: none;
+    }
 }
 
 .book-row i.sp-show {
@@ -262,4 +254,78 @@ li.menu-head > a {
     .book-row i.sp-show {
         display: contents;
     }
+}
+
+@keyframes fadeIn {
+    0% {
+       opacity: 0;
+       transform: translateY(20px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.book-detail {
+    min-height: 300px;
+    margin: 50px 0;
+    position: relative;
+}
+
+.book-detail {
+    .col {
+        min-height: 300px;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        opacity: 0;
+        animation: fadeIn 1s ease .5s forwards;
+    }
+    
+    .description {
+        opacity: 0;
+        animation: fadeIn 1s ease 1s forwards;
+    }
+    
+    .actions-btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        opacity: 0;
+        animation: fadeIn 1s ease 1.5s forwards;
+    }
+    
+    .actions-btn a {
+        background: color('teal','darken-1');
+    }
+    
+    .actions-btn a:hover {
+        background: color('teal','darken-4');
+        color: #fff;
+    }
+    
+    .bottom {
+        animation: fadeIn 1s ease 2s forwards;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        text-align: left;
+        opacity: 0;
+    }
+    
+    .bottom-row {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+    }
+
+}
+
+.back-btn:hover {
+    background: color('grey','darken-3');
+    color: #fff;
 }

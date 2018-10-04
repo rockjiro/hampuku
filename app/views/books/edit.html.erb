@@ -1,10 +1,4 @@
 <section class="main-item-wrapper blue-text text-darken-4">
     <div class="main-item">
-        <p><%= @book.name %></p>
-        <p><%= @book.description %></p>
-        <p><%= @book.author %></p>
-        <p><%= @book.created_at.strftime('%Y年%m月%d日 %H:%m') %></p>
-        <p><%= @book.star %></p>
-        <p><%= link_to '削除', user_book_path(@user,@book), method: :delete %></p>
     </div>
 </section>
