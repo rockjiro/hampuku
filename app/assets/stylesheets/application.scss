@@ -216,6 +216,26 @@ li.menu-head > a {
 
 .book-list {
     margin-top: 30px;
+    border: 1px solid #0000003b;
+}
+
+.book-row-wrapper {
+    position: relative;
+    
+    .actions-btn {
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        height: 100%;
+    }
+    
+    .actions-btn i {
+        font-size: 1.8rem;
+    }
+    
+    .actions-btn p {
+        margin: 9px 20px;
+    }
 }
 
 .book-row {
@@ -232,6 +252,10 @@ li.menu-head > a {
 }
 
 @media #{$small-and-down} {
+    .book-list {
+        border: none;
+    }
+    
     .book-title {
         font-size: 1.3rem;
         margin-bottom: 10px;
@@ -239,6 +263,10 @@ li.menu-head > a {
     
     .book-row {
         text-align: left;
+        padding: 10px 0;
+        margin: 20px 0;
+        border-left: 5px solid color("light-blue","darken-4");
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
     }
     
     .book-row-header {

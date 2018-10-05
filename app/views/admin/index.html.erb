@@ -13,7 +13,7 @@
         <% if @books.empty? %>
             <p>ブックがありません。</p>
         <% else %>
-            <div class="book-list z-depth-2">
+            <div class="book-list">
                 <ul class="book-row book-row-header row white-text light-blue darken-4 left-align">
                     <li class="col m6 s12">
                         タイトル
@@ -29,16 +29,30 @@
                     </li>
                 </ul>
                 <% @books.each do |book| %>
-                <ul class="book-row row grey-text text-darken-2 left-align">
-                    <li class="col m6 s12 book-title">
-                        <%= link_to(user_book_path(@user,book), method: :get, class: "grey-text text-darken-2") do %>
-                            <%= book.name %>
-                        <% end %>
-                    </li>
-                    <li class="col m2 s12"><i class="tiny material-icons sp-show">account_circle</i>Name</li>
-                    <li class="col m2 s12"><i class="tiny material-icons sp-show">access_time</i><%= book.created_at.strftime('%Y.%m.%d') %></li>
-                    <li class="col m2 s12"><i class="tiny material-icons amber-text">star</i>125</li>
-                </ul>
+                <div class="book-row-wrapper light-blue darken-4">
+                    <ul class="book-row row white grey-text text-darken-2 left-align">
+                        <li class="col m6 s10 book-title">
+                            <%= link_to(user_book_path(@user,book), method: :get, class: "grey-text text-darken-2") do %>
+                                <%= book.name %>
+                            <% end %>
+                        </li>
+                        <li class="col m2 s10"><i class="tiny material-icons sp-show">account_circle</i>Name</li>
+                        <li class="col m2 s10"><i class="tiny material-icons sp-show">access_time</i><%= book.created_at.strftime('%Y.%m.%d') %></li>
+                        <li class="col m2 s10"><i class="tiny material-icons amber-text">star</i>125</li>
+                    </ul>
+                    <div class="actions-btn">
+                        <i data-target="modal1" class="tiny material-icons sp-show grey-text text-darken-2 modal-trigger" >more_vert</i>
+                    </div>
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                          <p class="grey-text text-darken-2">ブックを編集or削除します</p>
+                        </div>
+                        <div class="modal-footer">
+                          <a href="#!" class="modal-close waves-effect red darken-3 white-text btn">削除</a>
+                          <a href="#!" class="modal-close waves-effect green darken-3 white-text btn">編集</a>
+                        </div>
+                    </div>
+                </div>
                 <% end %>
             </div>
         <% end %>
