@@ -15,7 +15,7 @@
         <% else %>
             <div class="book-list">
                 <ul class="book-row book-row-header row white-text light-blue darken-4 left-align">
-                    <li class="col m6 s12">
+                    <li class="col m5 s12">
                         タイトル
                     </li>
                     <li class="col m2 s12">
@@ -31,7 +31,7 @@
                 <% @books.each do |book| %>
                 <div class="book-row-wrapper light-blue darken-4">
                     <ul class="book-row row white grey-text text-darken-2 left-align">
-                        <li class="col m6 s10 book-title">
+                        <li class="col m5 s10 book-title">
                             <%= link_to(user_book_path(@user,book), method: :get, class: "grey-text text-darken-2") do %>
                                 <%= book.name %>
                             <% end %>
@@ -39,18 +39,22 @@
                         <li class="col m2 s10"><i class="tiny material-icons sp-show">account_circle</i>Name</li>
                         <li class="col m2 s10"><i class="tiny material-icons sp-show">access_time</i><%= book.created_at.strftime('%Y.%m.%d') %></li>
                         <li class="col m2 s10"><i class="tiny material-icons amber-text">star</i>125</li>
+                        <transition name="slide">
+                        <li class="action-btn" v-show="isOpen" style="display: none;">
+                            <%= link_to(user_book_path(@user,book),
+                                        method: :delete,
+                                        data: { confirm: "削除します。よろしいですか？" },
+                                        class: "red darken-4 white-text btn") do %>
+                                削除
+                            <% end %>
+                            <%= link_to(edit_user_book_path(@user,book), class: "waves-effect green-text text-darken-2 btn-flat") do %>
+                                編集
+                            <% end %>
+                        </li>
+                        </transition>
                     </ul>
-                    <div class="actions-btn">
-                        <i data-target="modal1" class="tiny material-icons sp-show grey-text text-darken-2 modal-trigger" >more_vert</i>
-                    </div>
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                          <p class="grey-text text-darken-2">ブックを編集or削除します</p>
-                        </div>
-                        <div class="modal-footer">
-                          <a href="#!" class="modal-close waves-effect red darken-3 white-text btn">削除</a>
-                          <a href="#!" class="modal-close waves-effect green darken-3 white-text btn">編集</a>
-                        </div>
+                    <div class="setting-btn" @click="doOpen">
+                        <i data-target="modal1" class="tiny material-icons grey-text text-darken-2 modal-trigger" >more_vert</i>
                     </div>
                 </div>
                 <% end %>

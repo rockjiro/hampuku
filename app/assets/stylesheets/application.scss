@@ -222,18 +222,18 @@ li.menu-head > a {
 .book-row-wrapper {
     position: relative;
     
-    .actions-btn {
+    .setting-btn {
         position: absolute;
-        top: 10px;
+        top: 13px;
         right: 5px;
-        height: 100%;
+        cursor: pointer;
     }
     
-    .actions-btn i {
+    .setting-btn i {
         font-size: 1.8rem;
     }
     
-    .actions-btn p {
+    .setting-btn p {
         margin: 9px 20px;
     }
 }
@@ -249,6 +249,27 @@ li.menu-head > a {
 
 .book-row:hover {
     background: color("grey", "lighten-3");
+}
+
+.action-btn {
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    background: #fff;
+    padding: 0;
+    text-align: center;
+    top: 8px;
+}
+
+.slide-enter-active {
+    transition: all .3s ease;
+}
+.slide-leave-active {
+    transition: all .3s ease;
+}
+.slide-enter, .slide-leave-to {
+    transform: translateX(200px);
+    opacity: 0;
 }
 
 @media #{$small-and-down} {
@@ -267,6 +288,27 @@ li.menu-head > a {
         margin: 20px 0;
         border-left: 5px solid color("light-blue","darken-4");
         box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    }
+
+    .action-btn {
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        background: #fff;
+        padding: 30px;
+        text-align: center;
+        top: 0;
+    }
+
+    .slide-enter-active {
+        transition: all .3s ease;
+    }
+    .slide-leave-active {
+        transition: all .3s ease;
+    }
+    .slide-enter, .slide-leave-to {
+        transform: translateX(100px);
+        opacity: 0;
     }
     
     .book-row-header {
