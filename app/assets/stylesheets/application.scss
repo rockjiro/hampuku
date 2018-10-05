@@ -46,7 +46,7 @@ input[type="submit" i] {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
-    animation: fadeIn 1.3s ease;
+    animation: fadeIn .8s ease;
 }
 
 .lead-text {
@@ -270,25 +270,22 @@ li.menu-head > a {
 
 .book-detail {
     min-height: 300px;
-    margin: 50px 0;
-    position: relative;
+    max-width: 1000px;
+    margin: 50px auto;
 }
 
 .book-detail {
-    .col {
-        min-height: 300px;
-    }
-    
     .title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: bold;
         opacity: 0;
-        animation: fadeIn 1s ease .5s forwards;
+        animation: fadeIn .8s ease .3s forwards;
     }
     
     .description {
+        font-size: 0.9rem;
         opacity: 0;
-        animation: fadeIn 1s ease 1s forwards;
+        animation: fadeIn .8s ease .3s forwards;
     }
     
     .actions-btn {
@@ -296,7 +293,7 @@ li.menu-head > a {
         bottom: 10px;
         right: 10px;
         opacity: 0;
-        animation: fadeIn 1s ease 1.5s forwards;
+        animation: fadeIn .8s ease .5s forwards;
     }
     
     .actions-btn a {
@@ -307,9 +304,31 @@ li.menu-head > a {
         background: color('teal','darken-4');
         color: #fff;
     }
+
+    .right-contents {
+        position: relative;
+        min-height: 300px;
+    }
+    
+    .left-contents {
+        position: relative;
+        min-height: 300px;
+    }
+    
+    @media #{$small-and-down} {
+        .left-contents {
+            font-size: 0.9rem;
+            min-height: 110px;
+        }
+        
+        .right-contents {
+            min-height: 200px;
+            width: 100%;
+        }
+    }
     
     .bottom {
-        animation: fadeIn 1s ease 2s forwards;
+        animation: fadeIn .8s ease 1s forwards;
         position: absolute;
         bottom: 10px;
         left: 10px;
@@ -321,6 +340,10 @@ li.menu-head > a {
         display: flex;
         align-items: center;
         padding: 5px;
+        
+        i {
+            font-size: 1.5rem;
+        }
     }
 
 }
