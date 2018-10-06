@@ -25,3 +25,4 @@ var app = new Vue({
         }
     }
 })
+;

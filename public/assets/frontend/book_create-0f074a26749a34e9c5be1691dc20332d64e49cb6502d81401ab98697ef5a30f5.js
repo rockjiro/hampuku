@@ -11,9 +11,7 @@ var app = new Vue({
         },
         doOpen: function(book) {
             for (var i in this.books){
-                if(i !== book){
-                    this.books[i] = false   
-                }
+                this.books[i] = false
             }
             //dataプロパティの値を反転する
             //プロパティが存在しなければ、追加する
@@ -25,3 +23,4 @@ var app = new Vue({
         }
     }
 })
+;

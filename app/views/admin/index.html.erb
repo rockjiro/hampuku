@@ -40,7 +40,7 @@
                         <li class="col m2 s10"><i class="tiny material-icons sp-show">access_time</i><%= book.created_at.strftime('%Y.%m.%d') %></li>
                         <li class="col m2 s10"><i class="tiny material-icons amber-text">star</i>125</li>
                         <transition name="slide">
-                        <li class="action-btn" v-show="isOpen" style="display: none;">
+                        <li class="action-btn" v-show="books['book<%= book.id %>']" v-cloak>
                             <%= link_to(user_book_path(@user,book),
                                         method: :delete,
                                         data: { confirm: "削除します。よろしいですか？" },
@@ -53,15 +53,17 @@
                         </li>
                         </transition>
                     </ul>
-                    <div class="setting-btn" @click="doOpen">
-                        <i data-target="modal1" class="tiny material-icons grey-text text-darken-2 modal-trigger" >more_vert</i>
+                    <div class="setting-btn" @click="doOpen('book<%= book.id %>')">
+                        <i data-target="modal1"
+                            class="tiny material-icons grey-text text-darken-2 modal-trigger"
+                        >more_vert</i>
                     </div>
                 </div>
                 <% end %>
             </div>
         <% end %>
             <transition name="modal">
-                <div class="modal-mask" v-show="isActive" style="display: none;">
+                <div class="modal-mask" v-show="isActive" v-cloak>
                     <div class="modal-wrapper">
                         <div class="modal-container">
                             <i class="material-icons small grey-text close-btn" @click="doActive">close</i>
