@@ -20,8 +20,8 @@
                 </div>
                 <div class="col m9 white grey-text text-darken-2 z-depth-1 left-align right-contents">
                     <%= form_for([@user,@book],methods: :patch) do |f| %>
-                    <p class="title"><%= f.text_field :name, placeholder: "タイトル", value: @book.name, "v-model"=>"name" %></p>
-                    <p class="description"><%= f.text_area :description, placeholder: "説明文", class: "materialize-textarea", value: @book.description, "v-model"=>"description" %></p>
+                    <p class="title"><%= f.text_field :name, placeholder: "タイトル", value: @book.name %></p>
+                    <p class="description"><%= f.text_area :description, placeholder: "説明文", class: "materialize-textarea", value: @book.description %></p>
                     <div class="actions-btn">
                         <p><%= f.submit "更新", class: "white-text btn teal darken-2", ":disabled" => "$v.$invalid" %></p>
                     </div>
