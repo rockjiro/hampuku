@@ -10,7 +10,7 @@
         <% if @books.empty? %>
             <p>ブックがありません。</p>
         <% else %>
-            <div class="book-list" id="book-setting">
+            <div class="book-list" id="js-book-setting">
                 <ul class="book-row book-row-header row white-text light-blue darken-4 left-align">
                     <li class="col m5 s12">
                         タイトル
@@ -67,7 +67,7 @@
                 <% end %>
             </div>
         <% end %>
-            <div id="book-create">
+            <div id="js-book-create">
                 <transition name="modal">
                     <div class="modal-mask" v-show="isActive" v-cloak>
                         <div class="modal-wrapper">
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                 </transition>
-                <p class="btn-floating btn" v-on:click="doActive">
+                <p class="btn-floating btn book-add-btn" v-on:click="doActive">
                     <i class="material-icons">add</i>
                 </p>
             </div>

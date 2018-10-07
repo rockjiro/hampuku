@@ -23,6 +23,10 @@ input[type="submit" i] {
     color: inherit;
 }
 
+.material-icons {
+    user-select: none;
+}
+
 .bg-blue-shape {
     background: linear-gradient(170deg,#01579b 5%, #fff 10%,#fff 85% ,#01579B 90%, #01579b 100%);
 }
@@ -167,7 +171,7 @@ li.menu-head > a {
 }
 
 .book-list {
-    margin-top: 30px;
+    margin: 30px 0 50px 0;
     border: 1px solid #0000003b;
 }
 
@@ -250,6 +254,12 @@ li.menu-head > a {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.book-add-btn {
+    position: fixed;
+    bottom: 35px;
+    right: 10px;
 }
 
 .book-detail {
