@@ -5,13 +5,13 @@
                 <div class="col m3 white-text left-contents">
                     <div class="bottom">
                         <div class="bottom-row">
-                            <i class="small material-icons">account_circle</i><span>大里 匠</span>
+                            <i class="small material-icons">account_circle</i><span><%= @book.author %></span>
                         </div>
                         <div class="bottom-row">
-                            <i class="small material-icons">access_time</i><span>2018.10.04</span>
+                            <i class="small material-icons">access_time</i><span><%= @book.created_at.strftime('%Y.%m.%d') %></span>
                         </div>
                         <div class="bottom-row">
-                            <i class="small material-icons amber-text">star</i><span>120</span>
+                            <i class="small material-icons amber-text">star</i><span><%= @book.star %></span>
                         </div>
                     </div>
                 </div>

@@ -203,6 +203,10 @@ li.menu-head > a {
     background: color("grey", "lighten-3");
 }
 
+.book-row a:hover {
+    color: color("amber","darken-1") !important;
+}
+
 .action-btn {
     position: absolute;
     height: 70%;
@@ -211,6 +215,14 @@ li.menu-head > a {
     padding: 0;
     text-align: center;
     top: 8px;
+}
+
+.action-btn:hover {
+    background: color("grey", "lighten-3");
+}
+
+.action-btn p {
+    margin: 0;
 }
 
 .slide-enter-active {
@@ -258,6 +270,7 @@ li.menu-head > a {
         font-size: 0.9rem;
         opacity: 0;
         animation: fadeIn .8s ease .3s forwards;
+        margin-bottom: 100px;
     }
     
     .actions-btn {
@@ -353,6 +366,7 @@ li.menu-head > a {
 
     .book-list {
         border: none;
+        overflow: hidden;
     }
     
     .book-title {
@@ -365,6 +379,7 @@ li.menu-head > a {
         padding: 10px 0;
         margin: 20px 0;
         border-left: 5px solid color("light-blue","darken-4");
+        border-right: 1px solid #0000003d;
         box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
     }
 
@@ -385,7 +400,7 @@ li.menu-head > a {
         transition: all .3s ease;
     }
     .slide-enter, .slide-leave-to {
-        transform: translateX(100px);
+        transform: translateX(50px);
         opacity: 0;
     }
     
