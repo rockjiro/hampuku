@@ -41,7 +41,7 @@
                         <li class="col m2 s10"><i class="tiny material-icons amber-text">star</i><%= book.star %></li>
                         <transition name="slide">
                         <li class="action-btn" v-show="books['book<%= book.id %>']" v-cloak>
-                            <buton class="red darken-4 white-text btn modal-trigger" data-target="modal<%= book.id %>">削除</buton>
+                            <button class="red darken-4 white-text btn modal-trigger" data-target="modal<%= book.id %>">削除</buton>
                             <%= link_to(edit_user_book_path(@user,book), class: "waves-effect green-text text-darken-2 btn-flat") do %>
                                 編集
                             <% end %>
