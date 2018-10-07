@@ -41,6 +41,7 @@
                         <li class="col m2 s10"><i class="tiny material-icons amber-text">star</i><%= book.star %></li>
                         <transition name="slide">
                         <li class="action-btn" v-show="books['book<%= book.id %>']" v-cloak>
+                            <button class="red darken-4 white-text btn modal-trigger" data-target="modal<%= book.id %>">削除</button>
                             <%= link_to(edit_user_book_path(@user,book), class: "waves-effect green-text text-darken-2 btn-flat") do %>
                                 編集
                             <% end %>
@@ -50,6 +51,20 @@
                     <!--編集、削除ボタンを表示するアイコン-->
                     <div class="setting-btn" @click="doOpen('book<%= book.id %>')">
                         <i class="tiny material-icons grey-text text-darken-2">more_vert</i>
+                    </div>
+                </div>
+                <!--データ削除の確認ダイアログ-->
+                <div id="modal<%= book.id %>" class="modal">
+                    <div class="modal-content">
+                        <p class="grey-text text-darken-2">削除します。よろしいですか？</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close btn-flat">キャンセル</a>
+                        <%= link_to(user_book_path(@user,book),
+                            method: :delete,
+                            class: "btn-flat") do %>
+                            OK
+                        <% end %>
                     </div>
                 </div>
                 <% end %>
