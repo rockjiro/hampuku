@@ -1,15 +1,9 @@
 Vue.use(window.vuelidate.default)
-new Vue({
-    el: '#js-book-create',
+var app = new Vue({
+    el: '#js-book-validation',
     data: {
         name: '',
         description: '',
-        isActive: false,
-    },
-    methods: {
-        doActive: function() {
-            this.isActive = !this.isActive
-        }
     },
 	validations: {
 		name: {
@@ -20,3 +14,4 @@ new Vue({
 		}
 	}
 })
+;

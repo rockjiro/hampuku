@@ -12,6 +12,10 @@ class BooksController < ApplicationController
         redirect_to admin_index_path        
     end
     
+    def new
+        @user = User.find(params[:user_id])
+    end
+    
     def show
         @user = User.find(params[:user_id])
         @book = Book.find(params[:id])        
@@ -26,7 +30,7 @@ class BooksController < ApplicationController
         @user = User.find(params[:user_id])
         @book = Book.find(params[:id])
         if @book.update(books_params)
-            redirect_to user_book_path(@user,@book)
+            redirect_to admin_index_path
         else
             render 'edit'
         end

@@ -7,6 +7,7 @@
             </p>
         </div>
         <div class="container">
+            <%= link_to 'ブックを追加', new_user_book_path(@user), class: "btn teal darken-2" %>
         <% if @books.empty? %>
             <p>ブックがありません。</p>
         <% else %>
@@ -67,33 +68,7 @@
                 <% end %>
             </div>
         <% end %>
-            <div id="js-book-create">
-                <transition name="modal">
-                    <div class="modal-mask" v-show="isActive" v-cloak>
-                        <div class="modal-wrapper">
-                            <div class="modal-container">
-                                <i class="material-icons small grey-text close-btn" @click="doActive">close</i>
-                                <h2 class="header-text">ブック登録</h2>
-                                <p class="grey-text text-darken-2">
-                                    ブックの名前、説明文を入力してください。<br>
-                                    入力が完了すると追加ボタンを押せます。
-                                </p>
-                                <%= form_for([@user,@user.books.build]) do |f| %>
-                                    <%= f.hidden_field :author, :value => @user.username %>
-                                    <p><%= f.text_field :name, placeholder: "タイトル", "v-model" => "name" %></p>
-                                    <p><%= f.text_area :description, placeholder: "説明文", class: "materialize-textarea", "v-model" => "description" %></p>
-                                    <p><%= f.submit "追加", class: "white-text btn-large", ":disabled" => "$v.$invalid" %></p>
-                                <% end %>
-                            </div>
-                        </div>
-                    </div>
-                </transition>
-                <p class="btn-floating btn book-add-btn" v-on:click="doActive">
-                    <i class="material-icons">add</i>
-                </p>
-            </div>
         </div>
     </div>
 </section>
-<%= javascript_include_tag 'frontend/book_create.js' %>
 <%= javascript_include_tag 'frontend/book_setting.js' %>

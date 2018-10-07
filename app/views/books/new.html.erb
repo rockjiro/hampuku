@@ -1,29 +1,30 @@
 <section class="main-item-wrapper blue-text text-darken-4">
     <div class="main-item">
         <div class="leading">
-            <h1 class="header-text">ブック編集</h1>
+            <h1 class="header-text">ブック追加</h1>
         </div>
         <div class="container">
             <div class="book-detail row z-depth-5 light-blue darken-4" id="js-book-validation">
                 <div class="col m3 white-text left-contents">
                     <div class="bottom">
                         <div class="bottom-row">
-                            <i class="small material-icons">account_circle</i><span><%= @book.author %></span>
+                            <i class="small material-icons">account_circle</i><span><%= @user.username %></span>
                         </div>
                         <div class="bottom-row">
-                            <i class="small material-icons">access_time</i><span><%= @book.created_at.strftime('%Y.%m.%d') %></span>
+                            <i class="small material-icons">access_time</i><span><%= Date.today.strftime('%Y.%m.%d') %></span>
                         </div>
                         <div class="bottom-row">
-                            <i class="small material-icons amber-text">star</i><span><%= @book.star %></span>
+                            <i class="small material-icons amber-text">star</i><span>0</span>
                         </div>
                     </div>
                 </div>
                 <div class="col m9 white grey-text text-darken-2 z-depth-1 left-align right-contents">
-                    <%= form_for([@user,@book],methods: :patch) do |f| %>
-                    <p class="title"><%= f.text_field :name, placeholder: "タイトル", value: @book.name, "v-model"=>"name" %></p>
-                    <p class="description"><%= f.text_area :description, placeholder: "説明文", class: "materialize-textarea", value: @book.description, "v-model"=>"description" %></p>
+                    <%= form_for([@user,@user.books.build]) do |f| %>
+                    <%= f.hidden_field :author, :value => @user.username %>
+                    <p class="title"><%= f.text_field :name, placeholder: "タイトル", "v-model"=>"name" %></p>
+                    <p class="description"><%= f.text_area :description, placeholder: "説明文", class: "materialize-textarea", "v-model"=>"description" %></p>
                     <div class="actions-btn">
-                        <p><%= f.submit "更新", class: "white-text btn teal darken-2", ":disabled" => "$v.$invalid" %></p>
+                        <p><%= f.submit "追加", class: "white-text btn teal darken-2", ":disabled" => "$v.$invalid" %></p>
                     </div>
                     <% end %>
                 </div>
