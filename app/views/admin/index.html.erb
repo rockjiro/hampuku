@@ -7,13 +7,10 @@
             </p>
         </div>
         <div class="container">
-            <p class="btn-floating btn" v-on:click="doActive">
-                <i class="material-icons">add</i>
-            </p>
         <% if @books.empty? %>
             <p>ブックがありません。</p>
         <% else %>
-            <div class="book-list">
+            <div class="book-list" id="book-setting">
                 <ul class="book-row book-row-header row white-text light-blue darken-4 left-align">
                     <li class="col m5 s12">
                         タイトル
@@ -70,23 +67,33 @@
                 <% end %>
             </div>
         <% end %>
-            <transition name="modal">
-                <div class="modal-mask" v-show="isActive" v-cloak>
-                    <div class="modal-wrapper">
-                        <div class="modal-container">
-                            <i class="material-icons small grey-text close-btn" @click="doActive">close</i>
-                            <h2 class="header-text">ブック登録</h2>
-                            <%= form_for([@user,@user.books.build]) do |f| %>
-                                <%= f.hidden_field :author, :value => @user.username %>
-                                <p><%= f.text_field :name, placeholder: "タイトル" %></p>
-                                <p><%= f.text_area :description, placeholder: "説明文", class: "materialize-textarea" %></p>
-                                <p><%= f.submit "追加", class: "white-text btn-large" %></p>
-                            <% end %>
+            <div id="book-create">
+                <transition name="modal">
+                    <div class="modal-mask" v-show="isActive" v-cloak>
+                        <div class="modal-wrapper">
+                            <div class="modal-container">
+                                <i class="material-icons small grey-text close-btn" @click="doActive">close</i>
+                                <h2 class="header-text">ブック登録</h2>
+                                <p class="grey-text text-darken-2">
+                                    ブックの名前、説明文を入力してください。<br>
+                                    入力が完了すると追加ボタンを押せます。
+                                </p>
+                                <%= form_for([@user,@user.books.build]) do |f| %>
+                                    <%= f.hidden_field :author, :value => @user.username %>
+                                    <p><%= f.text_field :name, placeholder: "タイトル", "v-model" => "name" %></p>
+                                    <p><%= f.text_area :description, placeholder: "説明文", class: "materialize-textarea", "v-model" => "description" %></p>
+                                    <p><%= f.submit "追加", class: "white-text btn-large", ":disabled" => "$v.$invalid" %></p>
+                                <% end %>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </transition>
+                </transition>
+                <p class="btn-floating btn" v-on:click="doActive">
+                    <i class="material-icons">add</i>
+                </p>
+            </div>
         </div>
     </div>
 </section>
 <%= javascript_include_tag 'frontend/book_create.js' %>
+<%= javascript_include_tag 'frontend/book_setting.js' %>
