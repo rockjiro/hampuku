@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+    before_action :sign_in_required, except: [:show]
     def create
         @user = User.find(params[:user_id])
         @user.books.create(books_params)
