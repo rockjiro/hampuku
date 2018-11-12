@@ -173,6 +173,7 @@ li.menu-head > a {
 .book-list {
     margin: 30px 0 50px 0;
     border: 1px solid #0000003b;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 .book-row-wrapper {
@@ -284,6 +285,7 @@ li.menu-head > a {
     }
     
     .actions-btn {
+        display: flex;
         position: absolute;
         bottom: 10px;
         right: 10px;
@@ -291,13 +293,8 @@ li.menu-head > a {
         animation: fadeIn .8s ease .5s forwards;
     }
     
-    .actions-btn a {
-        background: color('teal','darken-1');
-    }
-    
-    .actions-btn a:hover {
-        background: color('teal','darken-4');
-        color: #fff;
+    .actions-btn p {
+        margin-left: 10px;
     }
 
     .right-contents {
@@ -352,6 +349,18 @@ li.menu-head > a {
     display: none;
 }
 
+.carousel-item {
+    padding: 50px 30px;
+}
+
+.tabs .indicator {
+    background-color: color("light-blue","darken-4");
+}
+
+.text-list-wrapper {
+    margin: 50px 0;
+}
+
 @media #{$medium-and-down} {
     .login-container {
         width: 50%;
@@ -377,6 +386,7 @@ li.menu-head > a {
     .book-list {
         border: none;
         overflow: hidden;
+        box-shadow: none;
     }
     
     .book-title {

@@ -19,7 +19,8 @@
                     <p class="title"><%= @book.name %></p>
                     <%= simple_format(@book.description, class: "description") %>
                     <div class="actions-btn">
-                        <p><%= link_to '問題を解く',admin_index_path,class: "waves-effect waves-light btn" %></p>
+                        <p><%= link_to '問題を追加',book_texts_path(@book), method: :get, class: "waves-effect waves-light btn light-blue darken-4" %></p>
+                        <p><%= link_to '問題を解く',admin_index_path,class: "waves-effect waves-light btn teal darken-2" %></p>
                     </div>
                 </div>
             </div>

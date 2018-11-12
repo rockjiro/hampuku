@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     resources :books
   end
 
+  resources :books do
+    resources :texts
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

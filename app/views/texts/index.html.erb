@@ -1,0 +1,21 @@
+<section class="main-item-wrapper blue-text text-darken-4">
+    <div class="main-item">
+        <div class="leading">
+            <h1 class="header-text">ブック詳細</h1>
+        </div>
+        <div class="container">
+            <%= link_to 'テキストを追加', new_book_text_path(@book), class: "waves-effect waves-light btn teal darken-2" %>
+            <div class="text-list-wrapper">
+            <% if @texts.empty? %>
+                <p>テキストがありません。</p>
+            <% else %>
+                <% @texts.each_with_index do |text, i| %>
+                    <%= "問題#{i+1}" %>
+                    <%= text.question %>
+                <% end %>
+            <% end %>
+            </div>
+            <p><%= link_to 'ブック一覧に戻る',admin_index_path,class: "waves-effect waves-light btn-flat back-btn" %></p>
+        </div>
+    </div>
+</section>
